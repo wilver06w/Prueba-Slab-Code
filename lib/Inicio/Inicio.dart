@@ -4,13 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:pruebaslabcode/Utils/Constantes.dart';
 import 'package:pruebaslabcode/models/Informacion.dart';
 
-/// Colors used as background color for various month cells in this sample
-const Color _kLightGrey = Color.fromRGBO(238, 238, 238, 1);
-const Color _kLightGreen = Color.fromRGBO(198, 228, 139, 1);
-const Color _kMidGreen = Color.fromRGBO(123, 201, 111, 1);
-const Color _kDarkGreen = Color.fromRGBO(35, 154, 59, 1);
-const Color _kDarkerGreen = Color.fromRGBO(25, 97, 39, 1);
-
 /// Widget of heat map calendar
 class Inicio extends StatelessWidget {
   static String routeName = '/inicio';
@@ -59,6 +52,36 @@ class _InicioHomeState extends State<InicioHome>
         cantidadEnergiaGenerada: 60,
       ),
     );
+    data.add(
+      Informacion(
+        name: 'Operación planta de energía solar en Argentina',
+        facturacion: 10,
+        costosOperativos: 30,
+        nivelEjecucion: 40,
+        numeroOperarios: 50,
+        cantidadEnergiaGenerada: 60,
+      ),
+    );
+    data.add(
+      Informacion(
+        name: 'Operación planta de energía solar en Colombia',
+        facturacion: 10,
+        costosOperativos: 30,
+        nivelEjecucion: 40,
+        numeroOperarios: 50,
+        cantidadEnergiaGenerada: 60,
+      ),
+    );
+    data.add(
+      Informacion(
+        name: 'Operación planta de energía solar en Brasil',
+        facturacion: 10,
+        costosOperativos: 30,
+        nivelEjecucion: 40,
+        numeroOperarios: 50,
+        cantidadEnergiaGenerada: 60,
+      ),
+    );
 
     setState(() {});
 
@@ -88,12 +111,12 @@ class _InicioHomeState extends State<InicioHome>
               ),
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: 10,
+                  horizontal: 2,
                   vertical: 5,
                 ),
                 child: DataTable2(
                   columnSpacing: 12,
-                  horizontalMargin: 2,
+                  horizontalMargin: 5,
                   minWidth: 300,
                   columns: [
                     DataColumn2(
@@ -109,7 +132,7 @@ class _InicioHomeState extends State<InicioHome>
                     ),
                     DataColumn(
                       label: Text(
-                        nNombre,
+                        fFacturacion,
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 18,
@@ -119,7 +142,37 @@ class _InicioHomeState extends State<InicioHome>
                     ),
                     DataColumn(
                       label: Text(
-                        nNombre,
+                        cCostosOperativos,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                    DataColumn(
+                      label: Text(
+                        nNivelEjecucionPresupuesto,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                    DataColumn(
+                      label: Text(
+                        nNumeroOperaciones,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                    DataColumn(
+                      label: Text(
+                        cCantGeneradaM,
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 18,
@@ -134,12 +187,12 @@ class _InicioHomeState extends State<InicioHome>
                       cells: [
                         DataCell(
                           Container(
-                            color: Colors.white,
+                            width: double.infinity,
                             child: Text(
                               data[index].name,
                               style: const TextStyle(
                                 color: Colors.black,
-                                fontSize: 14,
+                                fontSize: 12,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -147,7 +200,9 @@ class _InicioHomeState extends State<InicioHome>
                         ),
                         DataCell(
                           Container(
-                            color: Colors.white,
+                            width: double.infinity,
+                            color: _getCellBackgroundColor(
+                                data[index].facturacion),
                             child: Text(
                               data[index].facturacion.toString(),
                               style: const TextStyle(
@@ -160,9 +215,56 @@ class _InicioHomeState extends State<InicioHome>
                         ),
                         DataCell(
                           Container(
-                            color: Colors.white,
+                            width: double.infinity,
+                            color: _getCellBackgroundColor(
+                                data[index].costosOperativos),
                             child: Text(
                               data[index].costosOperativos.toString(),
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                        ),
+                        DataCell(
+                          Container(
+                            width: double.infinity,
+                            color: _getCellBackgroundColor(
+                                data[index].nivelEjecucion),
+                            child: Text(
+                              data[index].nivelEjecucion.toString(),
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                        ),
+                        DataCell(
+                          Container(
+                            width: double.infinity,
+                            color: _getCellBackgroundColor(
+                                data[index].numeroOperarios),
+                            child: Text(
+                              data[index].numeroOperarios.toString(),
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                        ),
+                        DataCell(
+                          Container(
+                            width: double.infinity,
+                            color: _getCellBackgroundColor(
+                                data[index].cantidadEnergiaGenerada),
+                            child: Text(
+                              data[index].cantidadEnergiaGenerada.toString(),
                               style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 14,
@@ -218,11 +320,11 @@ class _InicioHomeState extends State<InicioHome>
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
                         colors: <Color>[
-                          _kLightGrey,
-                          _kLightGreen,
-                          _kMidGreen,
-                          _kDarkGreen,
-                          _kDarkerGreen,
+                          kLightGrey,
+                          kLightGreen,
+                          kMidGreen,
+                          kDarkGreen,
+                          kDarkerGreen,
                         ],
                       ),
                     ),
@@ -238,7 +340,7 @@ class _InicioHomeState extends State<InicioHome>
 
   /// Returns the cell  text color based on the cell background color
   Color _getCellTextColor(Color backgroundColor) {
-    if (backgroundColor == _kDarkGreen || backgroundColor == _kDarkerGreen) {
+    if (backgroundColor == kDarkGreen || backgroundColor == kDarkerGreen) {
       return Colors.white;
     }
 
@@ -251,47 +353,26 @@ class _InicioHomeState extends State<InicioHome>
 //           border: Border.all(color: defaultColor, width: 0.5)),
 //       child: Center(
 //         child: Text(
-//           details.date.day.toString(),
+//           details.numero.day.toString(),
 //           style: TextStyle(color: _getCellTextColor(backgroundColor)),
 //         ),
 //       ),
 //     );
 
-  Color _getMonthCellBackgroundColor(DateTime date) {
-    if (date.month.isEven) {
-      if (date.day % 6 == 0) {
-        // 6, 12, 18, 24, 30
-        return _kDarkerGreen;
-      } else if (date.day % 5 == 0) {
-        // 5, 10, 15, 20, 25
-        return _kMidGreen;
-      } else if (date.day % 8 == 0 || date.day % 4 == 0) {
-        //  4, 8, 16, 24, 28
-        return _kDarkGreen;
-      } else if (date.day % 9 == 0 || date.day % 3 == 0) {
-        // 3, 9, 18, 21, 27
-        return _kLightGrey;
-      } else {
-        // 1, 2, 7, 11, 13, 19, 22, 23, 26, 29
-        return _kLightGreen;
-      }
+  Color _getCellBackgroundColor(int numero) {
+    if (numero >= 0 && numero <= 20) {
+      return kLightGrey;
+    } else if (numero > 20 && numero <= 40) {
+      return kLightGreen;
+    } else if (numero > 40 && numero <= 60) {
+      return kMidGreen;
+    } else if (numero > 60 && numero <= 80) {
+      return kDarkGreen;
+    } else if (numero > 80 && numero <= 100) {
+      return kDarkerGreen;
     } else {
-      if (date.day % 6 == 0) {
-        // 6, 12, 18, 24, 30
-        return _kLightGreen;
-      } else if (date.day % 5 == 0) {
-        // 5, 10, 15, 20, 25
-        return _kLightGrey;
-      } else if (date.day % 8 == 0 || date.day % 4 == 0) {
-        //  4, 8, 16, 24, 28
-        return _kMidGreen;
-      } else if (date.day % 9 == 0 || date.day % 3 == 0) {
-        // 3, 9, 18, 21, 27
-        return _kDarkerGreen;
-      } else {
-        // 1, 2, 7, 11, 13, 19, 22, 23, 26, 29
-        return _kDarkGreen;
-      }
+      // 1, 2, 7, 11, 13, 19, 22, 23, 26, 29
+      return kDarkerGreen;
     }
   }
 }

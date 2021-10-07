@@ -71,7 +71,8 @@ class SplasState extends State<SplashHome> with SingleTickerProviderStateMixin {
               tween: Tween<double>(begin: 30, end: 100),
               builder: (BuildContext context, double sizes, Widget? child) {
                 return SvgPicture.asset(
-                  'assets/icons/icon_slabcodedos.svg',
+                  // 'assets/icons/icon_slabcodedos.svg',
+                  'assets/icons/icon_slabcode.svg',
                   color: kColorLogo,
                   fit: BoxFit.fitWidth,
                   height: 120,
