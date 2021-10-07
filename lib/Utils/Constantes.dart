@@ -11,6 +11,7 @@ const kPrimaryLightColor = Color(0xFFF1E6FF);
 const kColorGrisa = Color(0xFFF2F2F2);
 const kColorNegroTextoBoton = Color(0xFF141414);
 
+const dData = "Data";
 const aAppName = "Prueba Slab Code";
 const dDefaultSpacing = 16.0;
 const mMenos = "Menos";

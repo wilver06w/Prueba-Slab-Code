@@ -35,8 +35,6 @@ class _InicioHomeState extends State<InicioHome>
     // TODO: implement initState
 
     crearInformacion();
-
-    debugPrint(data.length.toString());
     super.initState();
   }
 
@@ -62,6 +60,8 @@ class _InicioHomeState extends State<InicioHome>
       ),
     );
 
+    setState(() {});
+
     data.forEach((element) {
       debugPrint(element.name);
     });
@@ -76,149 +76,108 @@ class _InicioHomeState extends State<InicioHome>
       backgroundColor: kColorFondoSplash,
       body: Column(
         mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          // DataTable2(
-          //   columnSpacing: 12,
-          //   horizontalMargin: 2,
-          //   minWidth: 300,
-          //   columns: [
-          //     DataColumn2(
-          //       label: Text(
-          //         '',
-          //         style: TextStyle(
-          //           color: kColorMisPuntos,
-          //           fontSize: 14,
-          //           fontWeight: FontWeight.w400,
-          //         ),
-          //       ),
-          //       size: ColumnSize.L,
-          //     ),
-          //     DataColumn(
-          //       label: Text(
-          //         nNombre,
-          //         style: TextStyle(
-          //           color: kColorMisPuntos,
-          //           fontSize: 14,
-          //           fontWeight: FontWeight.w400,
-          //         ),
-          //       ),
-          //     ),
-          //     DataColumn(
-          //       label: Text(
-          //         nNombre,
-          //         style: TextStyle(
-          //           color: kColorMisPuntos,
-          //           fontSize: 14,
-          //           fontWeight: FontWeight.w400,
-          //         ),
-          //       ),
-          //     ),
-          //     DataColumn(
-          //       label: Text(
-          //         nNombre,
-          //         style: TextStyle(
-          //           color: kColorMisPuntos,
-          //           fontSize: 14,
-          //           fontWeight: FontWeight.w400,
-          //         ),
-          //       ),
-          //     ),
-          //     DataColumn(
-          //       label: Text(
-          //         nNombre,
-          //         style: TextStyle(
-          //           color: kColorMisPuntos,
-          //           fontSize: 14,
-          //           fontWeight: FontWeight.w400,
-          //         ),
-          //       ),
-          //     ),
-          //     DataColumn(
-          //       label: Text(
-          //         nNombre,
-          //         style: TextStyle(
-          //           color: kColorMisPuntos,
-          //           fontSize: 14,
-          //           fontWeight: FontWeight.w400,
-          //         ),
-          //       ),
-          //     ),
-          //   ],
-          //   rows: List<DataRow>.generate(
-          //     data.length,
-          //     (index) => DataRow(
-          //       cells: [
-          //         DataCell(
-          //           Container(
-          //             color: Colors.green,
-          //             child: Text(
-          //               data[index].name,
-          //               style: const TextStyle(
-          //                 color: kColorMisPuntos,
-          //                 fontSize: 14,
-          //                 fontWeight: FontWeight.w400,
-          //               ),
-          //             ),
-          //           ),
-          //         ),
-          //         DataCell(
-          //           Container(
-          //             color: Colors.green,
-          //             child: Text(
-          //               data[index].name,
-          //               style: const TextStyle(
-          //                 color: kColorMisPuntos,
-          //                 fontSize: 14,
-          //                 fontWeight: FontWeight.w400,
-          //               ),
-          //             ),
-          //           ),
-          //         ),
-          //         DataCell(
-          //           Container(
-          //             color: Colors.green,
-          //             child: Text(
-          //               data[index].name,
-          //               style: const TextStyle(
-          //                 color: kColorMisPuntos,
-          //                 fontSize: 14,
-          //                 fontWeight: FontWeight.w400,
-          //               ),
-          //             ),
-          //           ),
-          //         ),
-          //         DataCell(
-          //           Container(
-          //             color: Colors.green,
-          //             child: Text(
-          //               data[index].name,
-          //               style: const TextStyle(
-          //                 color: kColorMisPuntos,
-          //                 fontSize: 14,
-          //                 fontWeight: FontWeight.w400,
-          //               ),
-          //             ),
-          //           ),
-          //         ),
-          //         DataCell(
-          //           Container(
-          //             color: Colors.green,
-          //             child: Text(
-          //               data[index].name,
-          //               style: const TextStyle(
-          //                 color: kColorMisPuntos,
-          //                 fontSize: 14,
-          //                 fontWeight: FontWeight.w400,
-          //               ),
-          //             ),
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
-
+          if (data.length > 0)
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: dDefaultSpacing),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                // border: Border.all(color: kPrimaryColor, width: 0.2),
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 5,
+                ),
+                child: DataTable2(
+                  columnSpacing: 12,
+                  horizontalMargin: 2,
+                  minWidth: 300,
+                  columns: [
+                    DataColumn2(
+                      label: Text(
+                        '',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      size: ColumnSize.L,
+                    ),
+                    DataColumn(
+                      label: Text(
+                        nNombre,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                    DataColumn(
+                      label: Text(
+                        nNombre,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                  ],
+                  rows: List<DataRow>.generate(
+                    data.length,
+                    (index) => DataRow(
+                      cells: [
+                        DataCell(
+                          Container(
+                            color: Colors.white,
+                            child: Text(
+                              data[index].name,
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                        ),
+                        DataCell(
+                          Container(
+                            color: Colors.white,
+                            child: Text(
+                              data[index].facturacion.toString(),
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                        ),
+                        DataCell(
+                          Container(
+                            color: Colors.white,
+                            child: Text(
+                              data[index].costosOperativos.toString(),
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          SizedBox(height: dDefaultSpacing),
           Container(
             margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
             width: screenWidth,
