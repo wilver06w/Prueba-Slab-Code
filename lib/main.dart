@@ -13,10 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: aAppName,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        textTheme: GoogleFonts.dmSansTextTheme().apply(
+        textTheme: GoogleFonts.ibmPlexSansTextTheme().apply(
           bodyColor: kPrimaryColor,
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,

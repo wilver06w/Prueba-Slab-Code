@@ -6,5 +6,14 @@ import 'package:pruebaslabcode/splash/splash.dart';
 /// All our routes will be available here
 final Map<String, WidgetBuilder> routes = {
   Splash.routeName: (context) => Splash(),
-  InicioHomePage.routeName: (context) => InicioHomePage(),
+  Inicio.routeName: (context) => Inicio(),
 };
+
+
+
+
+
+
+
+
+
