@@ -190,7 +190,7 @@ class _InicioHomeState extends State<InicioHome>
                             width: double.infinity,
                             child: Text(
                               data[index].name,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
@@ -205,8 +205,11 @@ class _InicioHomeState extends State<InicioHome>
                                 data[index].facturacion),
                             child: Text(
                               data[index].facturacion.toString(),
-                              style: const TextStyle(
-                                color: Colors.black,
+                              style: TextStyle(
+                                color: _getCellTextColor(
+                                  _getCellBackgroundColor(
+                                      data[index].facturacion),
+                                ),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -220,8 +223,11 @@ class _InicioHomeState extends State<InicioHome>
                                 data[index].costosOperativos),
                             child: Text(
                               data[index].costosOperativos.toString(),
-                              style: const TextStyle(
-                                color: Colors.black,
+                              style: TextStyle(
+                                color: _getCellTextColor(
+                                  _getCellBackgroundColor(
+                                      data[index].facturacion),
+                                ),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -235,8 +241,11 @@ class _InicioHomeState extends State<InicioHome>
                                 data[index].nivelEjecucion),
                             child: Text(
                               data[index].nivelEjecucion.toString(),
-                              style: const TextStyle(
-                                color: Colors.black,
+                              style: TextStyle(
+                                color: _getCellTextColor(
+                                  _getCellBackgroundColor(
+                                      data[index].facturacion),
+                                ),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -250,8 +259,11 @@ class _InicioHomeState extends State<InicioHome>
                                 data[index].numeroOperarios),
                             child: Text(
                               data[index].numeroOperarios.toString(),
-                              style: const TextStyle(
-                                color: Colors.black,
+                              style: TextStyle(
+                                color: _getCellTextColor(
+                                  _getCellBackgroundColor(
+                                      data[index].facturacion),
+                                ),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -265,8 +277,11 @@ class _InicioHomeState extends State<InicioHome>
                                 data[index].cantidadEnergiaGenerada),
                             child: Text(
                               data[index].cantidadEnergiaGenerada.toString(),
-                              style: const TextStyle(
-                                color: Colors.black,
+                              style: TextStyle(
+                                color: _getCellTextColor(
+                                  _getCellBackgroundColor(
+                                      data[index].facturacion),
+                                ),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -346,18 +361,6 @@ class _InicioHomeState extends State<InicioHome>
 
     return Colors.black;
   }
-
-// Container(
-//       decoration: BoxDecoration(
-//           color: backgroundColor,
-//           border: Border.all(color: defaultColor, width: 0.5)),
-//       child: Center(
-//         child: Text(
-//           details.numero.day.toString(),
-//           style: TextStyle(color: _getCellTextColor(backgroundColor)),
-//         ),
-//       ),
-//     );
 
   Color _getCellBackgroundColor(int numero) {
     if (numero >= 0 && numero <= 20) {
