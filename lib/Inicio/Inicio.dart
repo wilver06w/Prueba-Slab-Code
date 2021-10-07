@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class InicioHomePage extends StatefulWidget {
+  static String routeName = '/inicioScreen';
   InicioHomePage({
     Key? key,
   }) : super(key: key);
