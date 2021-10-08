@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color(0xFF0288D1);
 const kColorLogo = Color(0xFFf2b71d);
 const kColorFondoSplash = Color(0xFF1a1a1a);
-const kColorMisPuntos = Color(0xFF00C1D4);
-const kColorAzulVerMas = Color(0xFF003366);
 
 /// Colors used as background color for various month cells in this sample
 const Color kLightGrey = Color.fromRGBO(238, 238, 238, 1);

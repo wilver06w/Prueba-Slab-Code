@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         textTheme: GoogleFonts.ibmPlexSansTextTheme().apply(
-          bodyColor: kPrimaryColor,
+          bodyColor: kLightGreen,
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

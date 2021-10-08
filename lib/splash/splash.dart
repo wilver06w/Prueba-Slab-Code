@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -24,10 +23,10 @@ class SplashHome extends StatefulWidget {
 
 /// Donde se crea la vista y se manejan estados
 class SplasState extends State<SplashHome> with SingleTickerProviderStateMixin {
-  ///Animation controler
+  /// Animation controler
   late AnimationController _controller;
   @override
-// ignore: must_call_super
+  // ignore: must_call_super
   void initState() {
     _controller = AnimationController(
       vsync: this,
@@ -56,13 +55,11 @@ class SplasState extends State<SplashHome> with SingleTickerProviderStateMixin {
                 Timer(
                   const Duration(seconds: 3),
                   () {
-                    // Creando tu ruta
-                    // MaterialPageRoute routae = MaterialPageRoute(
-                    //   builder: (context) => Inicio(),
-                    // );
-                    // Navigator.pushAndRemoveUntil(context, routae, (r) => false);
-                    Navigator.of(context).pushNamedAndRemoveUntil(
-                        Inicio.routeName, ModalRoute.withName('/'));
+                    // Creando una ruta
+                    MaterialPageRoute routae = MaterialPageRoute(
+                      builder: (context) => Inicio(),
+                    );
+                    Navigator.pushAndRemoveUntil(context, routae, (r) => false);
                   },
                 );
               },
@@ -71,7 +68,6 @@ class SplasState extends State<SplashHome> with SingleTickerProviderStateMixin {
               tween: Tween<double>(begin: 30, end: 100),
               builder: (BuildContext context, double sizes, Widget? child) {
                 return SvgPicture.asset(
-                  // 'assets/icons/icon_slabcodedos.svg',
                   'assets/icons/icon_slabcode.svg',
                   color: kColorLogo,
                   fit: BoxFit.fitWidth,
